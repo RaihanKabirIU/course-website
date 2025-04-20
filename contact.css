@@ -1,0 +1,122 @@
+/* ======= Contact Page Layout ======= */
+body {
+    background-color: #4d5154;
+    background-image: radial-gradient(#9648da 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #ffffff;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+  
+  /* Left Side - Form */
+  .contact-form {
+    flex: 1 1 45%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 20px;
+    color: #1d3138;
+    font-size: 28px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #1d3138;
+    outline: none;
+  }
+  
+  .contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1d3138;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #294851;
+  }
+  
+  /* Right Side - Contact Info */
+  .contact-info-list {
+    flex: 1 1 45%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .contact-info-list h2 {
+    margin-bottom: 20px;
+    color: #1d3138;
+    font-size: 28px;
+  }
+  
+  .contact-info-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+  
+  .contact-info-list i {
+    color: #1d3138;
+    margin-right: 10px;
+    min-width: 20px;
+  }
+  
+  .contact-info-list a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contact-info-list a:hover {
+    color: #005999;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+  

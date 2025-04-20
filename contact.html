@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- ========== NAVBAR SECTION ========== -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo" class="logo-image">
+        <h2 style="color: white;">BanglaGuardians</h2>
+      </div>
+      <nav>
+        <ul>
+            <li><a href="home.html">HomePage</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="index.html">Port-Folio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-container">
+    <div class="contact-form">
+      <h2>Send Me a Message</h2>
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <!-- Honeypot Field for Spam Protection -->
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+      
+        <!-- Your Actual Inputs -->
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="Email" placeholder="Your Email" required />
+        <input type="tel" name="WhatsApp" placeholder="WhatsApp Number" />
+        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+      
+        <!-- ✅ Optional reCAPTCHA -->
+        <div data-netlify-recaptcha="true"></div>
+      
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+      
+    </div>
+    <div class="contact-info-list">
+      <h2>Contact Info</h2>
+      <ul>
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+8801906580638">+8801906580638</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:raihankabir.iu@gmail.com">raihankabir.iu@gmail.com</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></li>
+        <li><i class="fas fa-globe"></i> <a href="https://yourwebsite.com" target="_blank">Website</a></li>
+        <li><i class="fab fa-telegram-plane"></i> <a href="https://t.me/yourusername" target="_blank">Telegram</a></li>
+        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/yourwhatsapplink" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
+  </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</body>
+</html>
