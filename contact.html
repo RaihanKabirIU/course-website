@@ -30,9 +30,8 @@
     <div class="contact-form">
       <h2>Send Me a Message</h2>
 
-      <!-- ✅ FORM শুরু -->
+      <!-- ✅ FORM -->
       <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-        <!-- Honeypot Field -->
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -44,8 +43,8 @@
         <input type="tel" name="WhatsApp" placeholder="WhatsApp Number" />
         <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
 
-        <!-- Optional reCAPTCHA -->
-        <div data-netlify-recaptcha="true"></div>
+        <!-- ✅ Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
 
         <!-- Submit -->
         <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
@@ -75,28 +74,10 @@
     <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
   </footer>
 
-  <!-- reCAPTCHA -->
+  <!-- ✅ reCAPTCHA Script -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  <!-- ✅ JavaScript for Thank You -->
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      const form = event.target;
-      const data = new FormData(form);
-
-      fetch("/", {
-        method: "POST",
-        body: data
-      })
-      .then(() => {
-        form.style.display = "none";
-        document.getElementById("thank-you").style.display = "block";
-      })
-      .catch(error => alert("Error: " + error));
-    }
-  </script>
-<script src="font.js"></script>
-
+  <!-- ✅ External JS -->
+  <script src="font.js"></script>
 </body>
 </html>
