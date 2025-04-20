@@ -18,9 +18,9 @@
       </div>
       <nav>
         <ul>
-            <li><a href="index.html">HomePage</a></li>
+            <li><a href="home.html">HomePage</a></li>
             <li><a href="course.html">Courses</a></li>
-            <li><a href="https://raihankabiriu.github.io/portfolio/">Port-Folio</a></li>
+            <li><a href="index.html">Port-Folio</a></li>
         </ul>
       </nav>
     </div>
@@ -29,30 +29,26 @@
   <section class="contact-container">
     <div class="contact-form">
       <h2>Send Me a Message</h2>
-
-      <!-- ✅ FORM -->
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <!-- Honeypot Field for Spam Protection -->
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
-
+      
+        <!-- Your Actual Inputs -->
         <input type="text" name="Name" placeholder="Your Name" required />
         <input type="email" name="Email" placeholder="Your Email" required />
         <input type="tel" name="WhatsApp" placeholder="WhatsApp Number" />
         <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-
-        <div class="g-recaptcha" data-sitekey="6LcEzx4rAAAAAMgD-X8QOt8Qm28fz7ZMA2HSy4Mz"></div>
-
+      
+        <!-- ✅ Optional reCAPTCHA -->
+        <div data-netlify-recaptcha="true"></div>
+      
         <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
       </form>
-
-      <div id="thank-you" style="display:none; color: green; margin-top: 20px;">
-        ✅ Thank you! Your message has been submitted.
-      </div>
+      
     </div>
-
-    <!-- Sidebar Info -->
     <div class="contact-info-list">
       <h2>Contact Info</h2>
       <ul>
@@ -70,62 +66,7 @@
     <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
   </footer>
 
-  <!-- ✅ reCAPTCHA Script -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  <!-- ✅ Inline JS -->
-  <script>
-    function sanitizeInput(value) {
-      const pattern = /(<[^>]*>|https?:\/\/[^\s]+|script|on\w+=|data:|javascript:)/gi;
-      return pattern.test(value);
-    }
-
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      const form = event.target;
-
-      const name = form.querySelector('[name="Name"]').value.trim();
-      const email = form.querySelector('[name="Email"]').value.trim();
-      const whatsapp = form.querySelector('[name="WhatsApp"]').value.trim();
-      const message = form.querySelector('[name="Message"]').value.trim();
-      const recaptcha = grecaptcha.getResponse();
-
-      if (!recaptcha) {
-        event.preventDefault();
-        alert("❌ Please verify you're not a robot.");
-        return;
-      }
-
-      if (sanitizeInput(name) || name.length < 2) {
-        event.preventDefault();
-        alert("❌ Invalid Name. Please enter a valid name.");
-        return;
-      }
-
-      if (sanitizeInput(email)) {
-        event.preventDefault();
-        alert("❌ Invalid Email. Please enter a valid email.");
-        return;
-      }
-
-      if (whatsapp && !/^\d{6,15}$/.test(whatsapp)) {
-        event.preventDefault();
-        alert("❌ Invalid WhatsApp Number. Only digits allowed (6-15).");
-        return;
-      }
-
-      if (sanitizeInput(message) || message.length < 5) {
-        event.preventDefault();
-        alert("❌ Invalid Message. Avoid links or scripts.");
-        return;
-      }
-
-      // ✅ Show thank you message after a short delay
-      setTimeout(() => {
-        document.getElementById("thank-you").style.display = "block";
-        form.style.display = "none";
-        grecaptcha.reset();
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
