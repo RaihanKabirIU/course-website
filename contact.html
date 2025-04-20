@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
   <!-- ========== NAVBAR SECTION ========== -->
   <header>
     <div class="navbar">
@@ -18,37 +19,48 @@
       </div>
       <nav>
         <ul>
-            <li><a href="home.html">HomePage</a></li>
-            <li><a href="course.html">Courses</a></li>
-            <li><a href="index.html">Port-Folio</a></li>
+          <li><a href="index.html">HomePage</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="https://raihankabiriu.github.io/portfolio/">Port-Folio</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- ========== CONTACT FORM SECTION ========== -->
   <section class="contact-container">
     <div class="contact-form">
       <h2>Send Me a Message</h2>
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <!-- Honeypot Field for Spam Protection -->
-        <input type="hidden" name="form-name" value="contact" />
-        <p hidden>
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-      
-        <!-- Your Actual Inputs -->
-        <input type="text" name="Name" placeholder="Your Name" required />
-        <input type="email" name="Email" placeholder="Your Email" required />
-        <input type="tel" name="WhatsApp" placeholder="WhatsApp Number" />
-        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-      
-        <!-- ✅ Optional reCAPTCHA -->
-        <div data-netlify-recaptcha="true"></div>
-      
+      <h3>NOTE: Login to your Gmail using Chrome/Firefox before sending</h3>
+
+      <!-- ✅ FORM START -->
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+
+        <!-- ✅ WhatsApp: only digits, max length 12 -->
+        <input
+          type="tel"
+          id="whatsapp"
+          placeholder="WhatsApp Number"
+          pattern="^[0-9]{1,12}$"
+          maxlength="12"
+          inputmode="numeric"
+          title="WhatsApp number should be up to 12 digits only"
+          required
+        />
+
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
       </form>
-      
+
+      <!-- ✅ Thank You Message -->
+      <div id="thank-you" style="display:none; color: green; margin-top: 20px;">
+        ✅ Redirecting to your email app...
+      </div>
     </div>
+
+    <!-- ========== CONTACT INFO SECTION ========== -->
     <div class="contact-info-list">
       <h2>Contact Info</h2>
       <ul>
@@ -62,11 +74,38 @@
     </div>
   </section>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
     <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
   </footer>
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- ✅ JavaScript: Validate & Open mail client -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault(); // prevent actual form submission
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // ✅ Extra WhatsApp number validation
+      if (!/^\d{10,12}$/.test(whatsapp)) {
+        alert("Give me Correct number without country code");
+        return;
+      }
+
+      const subject = encodeURIComponent("New Message from Portfolio Site");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nMessage:\n${message}`
+      );
+
+      const mailtoLink = `mailto:raihankabir.iu@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+
+      document.getElementById("thank-you").style.display = "block";
+    });
+  </script>
 
 </body>
 </html>
