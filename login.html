@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Portfolio</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="auth.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -17,20 +18,52 @@
       </div>
       <nav>
         <ul>
-            <li><a href="index.html">HomePage</a></li>
-            <li><a href="signup.html">SignUp</a></li>
+            <li><a href="C:\Users\RK\Desktop\Vscode\website\home.html">HomePage</a></li>
           </ul>
       </nav>
     </div>
   </header>
 
+    <div class="auth-container">
+      <h2>লগইন করুন</h2>
+      <input type="email" id="loginEmail" placeholder="আপনার ইমেইল লিখুন">
+      <input type="password" id="loginPassword" placeholder="পাসওয়ার্ড দিন">
+      <button onclick="logIn()">লগইন</button>
+      <p class="switch-link">নতুন একাউন্ট? <a href="signup.html">সাইন আপ করুন</a></p>
+    </div>
+    
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer>
+      <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
+    </footer>
 
-    <!-- login -->
-    <h1>login Page Under Construction</h1>
-
-  <!-- ========== FOOTER SECTION ========== -->
-  <footer>
-    <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+  
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        appId: "YOUR_APP_ID"
+      };
+  
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+  
+      window.logIn = function () {
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+  
+        signInWithEmailAndPassword(auth, email, password)
+          .then(userCredential => {
+            alert("লগইন সফল হয়েছে!");
+            // window.location.href = "dashboard.html";
+          })
+          .catch(error => {
+            alert("লগইন ব্যর্থ: " + error.message);
+          });
+      }
+    </script>
+  </body>
+  </html>
