@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Portfolio</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="auth.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -17,20 +18,54 @@
       </div>
       <nav>
         <ul>
-            <li><a href="index.html">HomePage</a></li>
-            <li><a href="login.html">loginb</a></li>
+            <li><a href="C:\Users\RK\Desktop\Vscode\website\home.html">HomePage</a></li>
           </ul>
       </nav>
     </div>
   </header>
+  <div class="auth-container">
+    <h2>নতুন একাউন্ট তৈরি করুন</h2>
+    <input type="email" id="signupEmail" placeholder="আপনার ইমেইল লিখুন">
+    <input type="password" id="signupPassword" placeholder="পাসওয়ার্ড দিন">
+    <button onclick="signUp()">সাইন আপ</button>
+    <p class="switch-link">একাউন্ট আছে? <a href="login.html">লগইন করুন</a></p>
+  </div>
 
 
-    <!-- Signup -->
-    <h1>signup Page Under Construction</h1>
 
   <!-- ========== FOOTER SECTION ========== -->
   <footer>
     <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
   </footer>
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.signUp = function () {
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("সাইন আপ সফল হয়েছে!");
+          // window.location.href = "dashboard.html";
+        })
+        .catch(error => {
+          alert("সাইন আপ ব্যর্থ: " + error.message);
+        });
+    }
+  </script>
 </body>
 </html>
