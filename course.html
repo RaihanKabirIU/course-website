@@ -3,11 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Portfolio</title>
+  <title>BanglaGuardians | Courses</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="course.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Extra styling for course toggle system */
+    .course-box {
+      max-width: 800px;
+      margin: 20px auto;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .course-toggle {
+      width: 100%;
+      padding: 15px 20px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .course-toggle:hover {
+      background-color: #0056b3;
+    }
+
+    .course-details {
+      display: none;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .course-details.show {
+      display: block;
+    }
+
+    .module h3 {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
+
   <!-- ========== NAVBAR SECTION ========== -->
   <header>
     <div class="navbar">
@@ -17,23 +61,150 @@
       </div>
       <nav>
         <ul>
-          <li><a href="https://raihankabiriu.github.io/portfolio/">Port-Folio</a></li>
-            <li><a href="index.html">HomePage</a></li>
-            <li><a href="login.html">loginb</a></li>
-            <li><a href="signup.html">SignUp</a></li>
+          <li><a href="index.html">Port-Folio</a></li>
+          <li><a href="home.html">HomePage</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">SignUp</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- ========== COURSE HEADER ========== -->
+  <section class="course-header">
+    <h1>Bug Hunting Masterclass</h1>
+    <p>Learn ethical hacking and bug bounty hunting from scratch with hands-on labs and real-world targets.</p>
+  </section>
 
-    <!-- Course -->
-    <h1>course Page Under Construction </h1>
+  <!-- ========== WHAT YOU WILL LEARN ========== -->
+  <section class="course-learn">
+    <h2>What You Will Learn</h2>
+    <ul>
+      <li>Bug Bounty Basics & Job Opportunities</li>
+      <li>Advanced OSINT Techniques</li>
+      <li>Hands-on Labs with Kali Linux & Burp Suite</li>
+      <li>Live Recon & Hacking on Real Targets</li>
+      <li>Reporting, Note-Taking & Career Guidance</li>
+    </ul>
+  </section>
 
-  <!-- ========== FOOTER SECTION ========== -->
+  <!-- ========== COURSE MODULES ========== -->
+  <section class="course-modules">
+    <h2>Our Courses</h2>
+
+    <div class="course-box">
+      <button class="course-toggle">Bug Bounty Course 2025 Batch</button>
+      <div class="course-details">
+        <div class="module">
+          <h3>Introduction</h3>
+          <ul>
+            <li>Bug Hunting</li>
+            <li>Job Opportunity</li>
+            <li>Freelancing</li>
+            <li>Tools Installation</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>OSINT</h3>
+          <ul>
+            <li>Introduction</li>
+            <li>Phone & Email OSINT</li>
+            <li>OSINT Labs</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Lab Setup</h3>
+          <ul>
+            <li>Lab Setup</li>
+            <li>Kali Linux Installation</li>
+            <li>OSINT CTF</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Networking & Attacks</h3>
+          <ul>
+            <li>Wireshark Lab</li>
+            <li>Open Server Attack</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Burp Suite & Recon</h3>
+          <ul>
+            <li>Burp Suite Basics & Tools</li>
+            <li>Recon Tools & Live Recon</li>
+            <li>Account Creation on Platforms</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Web Vulnerabilities (Labs)</h3>
+          <ul>
+            <li>Steganography</li>
+            <li>Web Cache Deception</li>
+            <li>File Upload Vulnerability</li>
+            <li>Information Disclosure</li>
+            <li>DOM Based Vulnerability</li>
+            <li>SSRF, Path Traversal, OS Command Injection</li>
+            <li>Clickjacking, CSRF, Authentication</li>
+            <li>Business Logic, CORS, JWT</li>
+            <li>Access Control</li>
+            <li>Cross Site Scripting (XSS) Part 1 & 2</li>
+            <li>SQL Injection Part 1 & 2</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h3>Live Hacking & Reporting</h3>
+          <ul>
+            <li>Live Hacking on Real Targets</li>
+            <li>Note Taking</li>
+            <li>Bug Report Writing</li>
+            <li>Freelancing Platform Tips</li>
+            <li>Farewell & Final Hacking Session</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Course Structure -->
+    <!--
+    <div class="course-box">
+      <button class="course-toggle">Bug Bounty Advanced Batch</button>
+      <div class="course-details">
+        <div class="module">
+          <h3>Advanced Module Title</h3>
+          <ul>
+            <li>Advanced Topic 1</li>
+            <li>Advanced Topic 2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    -->
+  </section>
+
+  <!-- ========== ENROLL SECTION ========== -->
+  <section class="enroll-section">
+    <h2>Ready to Become a Bug Hunter?</h2>
+    <p>Join our course and start your journey today!</p>
+    <a href="signup.html" class="enroll-btn">Enroll Now</a>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
   <footer>
     <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
   </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    const toggles = document.querySelectorAll(".course-toggle");
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const details = toggle.nextElementSibling;
+        details.classList.toggle("show");
+      });
+    });
+  </script>
+
 </body>
 </html>
