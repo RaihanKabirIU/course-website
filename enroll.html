@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BanglaGuardians | Courses</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="enroll.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+<body>
+
+  <!-- ========== NAVBAR SECTION ========== -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo" class="logo-image">
+        <h2 style="color: white;">BanglaGuardians</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Port-Folio</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="home.html">HomePage</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="enroll-container">
+    <h1>কোর্সে এনরোল করুন</h1>
+    <p class="intro-text">
+      কোর্সের মূল্য: <strong>৪০০০ টাকা</strong><br>
+      আপনি নিচের যেকোনো মাধ্যমে পেমেন্ট করতে পারবেন:
+    </p>
+
+    <div class="payment-info">
+      <div class="method">
+        <img src="https://seeklogo.com/images/B/bkash-logo-FBB258B90F-seeklogo.com.png" alt="bKash Logo">
+        <p><strong>bKash Personal:</strong> 01760353062</p>
+      </div>
+      <div class="method">
+        <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad Logo">
+        <p><strong>Nagad Personal:</strong> 01760353062</p>
+      </div>
+    </div>
+
+    <p class="note">Send Money করার পর নিচের ফর্মটি পূরণ করুন। আমরা যাচাই করে আপনাকে কনফার্মেশন ইমেইল পাঠাবো।</p>
+
+    <form action="https://formsubmit.io/send/raihan.iu.ac.bd@gmail.com" method="POST" class="enroll-form">
+      <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+      <input type="text" name="name" placeholder="আপনার নাম" required>
+      <input type="tel" name="phone" placeholder="ফোন নম্বর" required>
+      <input type="text" name="transaction_id" placeholder="bKash/Nagad ট্রানজেকশন নম্বর" required>
+      <input type="number" name="amount" placeholder="পেমেন্টের পরিমাণ (৪০০০)" required>
+      <button type="submit">সাবমিট করুন</button>
+    </form>
+  </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; 2025 BanglaGuardians. All rights reserved.</p>
+      </footer>
+
+</body>
+</html>
+
+
+
+
