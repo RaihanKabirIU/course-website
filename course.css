@@ -1,0 +1,135 @@
+.course-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #001f3f;
+    color: white;
+  }
+  
+  .course-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .course-learn {
+    padding: 30px 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .course-learn h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .course-learn ul {
+    max-width: 700px;
+    margin: auto;
+    list-style: square inside;
+    padding: 0;
+  }
+  
+  .course-modules {
+    padding: 40px 20px;
+    background-color: white;
+  }
+  
+  .course-modules h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .module {
+    background: #f9f9f9;
+    border-left: 5px solid #007BFF;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .module h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .module ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .enroll-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .enroll-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #fff;
+    color: #007BFF;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .enroll-btn:hover {
+    background-color: #eaeaea;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .course-header h1 {
+      font-size: 28px;
+    }
+  
+    .module {
+      margin: 15px 10px;
+    }
+  
+    .enroll-btn {
+      width: 90%;
+    }
+  }
+
+  .course-box {
+  max-width: 800px;
+  margin: 20px auto;
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.course-toggle {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.course-toggle:hover {
+  background-color: #0056b3;
+}
+
+.course-details {
+  display: none;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Toggle effect animation */
+.course-details.show {
+  display: block;
+}
+
+  
